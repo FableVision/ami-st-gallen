@@ -1,0 +1,1 @@
+Producers / Artists, put your photos in this folder!
