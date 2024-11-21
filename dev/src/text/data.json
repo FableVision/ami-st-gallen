@@ -1,0 +1,50 @@
+[
+    {
+        "thumbnailFileName": "APSHOVENThomasvan_G1995.3_SStadler2013.jpg",
+        "forbiddenWords": "Bilder / Künstler / Galerie / Porträt / Raum"
+    },
+    {
+        "thumbnailFileName": "BAROCCIFederico_G2008.1_SStadler2013_mitRahmen.jpg",
+        "forbiddenWords": "Mann / Blick / Locken / nackt / Haut"
+    },
+    {
+        "thumbnailFileName": "BRUYNBartholomaus_G2002.2_SStadler2013.jpg",
+        "forbiddenWords": "Mann / Fell / Bart / Hut / Grün / Hand"
+    },
+    {
+        "thumbnailFileName": "CUYPJacobGerritsz._G2010.2_SStadler2013_mitRahmen.jpg",
+        "forbiddenWords": "Frau / Spitze / Wangen / Frisur / Grau "
+    },
+    {
+        "thumbnailFileName": "G2001.20_CEULENCornelisJonsonvan_SStadler2020.jpg",
+        "forbiddenWords": "Schwarz / Schmuck / Gold / Kopf / Hand"
+    },
+    {
+        "thumbnailFileName": "G2012.9_BETTINiccolodiGiovannizugeschrieben_mitFarbkarte.jpg",
+        "forbiddenWords": "Frau / Kragen / Handschuhe / Ring / Kleid"
+    },
+    {
+        "thumbnailFileName": "G2014.23_BETTINiccolodiGiovannizugeschrieben_SStadler2014_mitRahmen.jpg",
+        "forbiddenWords": "Mann / Schwarz / Bart / Grau / Hand"
+    },
+    {
+        "thumbnailFileName": "GRAFFAnton_G1936.7_HWeber.jpg",
+        "forbiddenWords": "Frau / Grau / Rot / Schmuck / alt"
+    },
+    {
+        "thumbnailFileName": "MettlerJohannes_BildniseinesHerrn_1860_G2016.10_SStadler.jpg",
+        "forbiddenWords": "Mann / dick / Hemd / Schwarz / Stuhl"
+    },
+    {
+        "thumbnailFileName": "SalviGiovanniBattista_MadonnaimGebet.jpg",
+        "forbiddenWords": "Frau / Beten / Heiligenschein / Blau / Hände"
+    },
+    {
+        "thumbnailFileName": "VerkoljeJan_PortraiteinesstehendenHerrn_ParkimHG_1684_nachRestaurierung_G2014.32_SStadler.jpg",
+        "forbiddenWords": "Mann / Hand / Hintergrund / Bücher / Tisch"
+    },
+    {
+        "thumbnailFileName": "WaldmuullerFerdinandGeorg_TheresePeucker-Katzenberger_1856_SStadler2013_mitRahmen.jpg",
+        "forbiddenWords": "Frau / Hals / Weiss / Hand / Stoff"
+    }
+]
