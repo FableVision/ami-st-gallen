@@ -15,7 +15,8 @@ export default defineConfig({
         chunkFileNames: `src/[name].js`,
         assetFileNames: `src/assets/[ext]/[name].[ext]`,
       }
-    }
+    },
+    assetsInlineLimit: 0
   },
   // base: './src',
   resolve: {

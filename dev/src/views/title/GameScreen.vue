@@ -1,7 +1,24 @@
 <template>
 	<div class="main-center-vertically" style="background-color: var(--white)">
+		<button @click="openHomeMenu" class="header-button-home">
+			<img class="header-icon" src="@/assets/png/home.png">
+		</button>
+		<button v-if="gamePhase==='setup'" @click="backButton" class="header-button-back">
+			Back
+			<img class="header-icon-back" src="@/assets/png/back.png">
+		</button>
+		<div v-if="showingHomePopup" class="home-background">
+			<div class="home-container">
+				<button class="x-button" @click="showingHomePopup=false">
+					<img class="x-icon" src="@/assets/png/exit.png">
+				</button>
+				<h2 style="font-size: 30pt; margin: 5px;">Menu</h2>
+				<button @click="playAgain" class="button white-button">Restart Game</button>
+				<button @click="backToTitle" class="button white-button">Exit</button>
+			</div>
+		</div>
 		<div v-if="gamePhase==='setup' && setupPhase === 0" class="main-center-vertically">
-			<h1 style="margin: 0;">How many players?</h1>
+			<h1 style="margin: 0;"><InlineIcon :size="35" :imgurl="'person'"></InlineIcon> How many players?</h1>
 			<ul class="setup-button-list">
 				<li><button class="setup-button" v-on:click="choosePlayerCount(2)">2 Players</button></li>
 				<li><button class="setup-button" v-on:click="choosePlayerCount(3)">3 Players</button></li>
@@ -9,7 +26,7 @@
 			</ul>
 		</div>
 		<div v-if="gamePhase==='setup' && setupPhase === 1" class="main-center-vertically">
-			<h1 style="margin: 0;">What are their names?</h1>
+			<h1 style="margin: 0;"><InlineIcon :size="35" :imgurl="'person'"></InlineIcon>What are their names?</h1>
 			<ul class="setup-button-grid">
 				<li v-for="(name, index) in playerCount" :key="index">
 					<input 
@@ -30,7 +47,7 @@
 			</button>
 		</div>
 		<div v-if="gamePhase==='setup' && setupPhase === 2" class="main-center-vertically">
-			<h1 style="margin: 0;">How much time per round?</h1>
+			<h1 style="margin: 0;"><InlineIcon :imgurl="'time'" :size="50"></InlineIcon>How much time per round?</h1>
 			<ul class="setup-button-list">
 				<li><button class="setup-button" v-on:click="chooseTimeLimit(3)">3 minutes</button></li>
 				<li><button class="setup-button" v-on:click="chooseTimeLimit(5)">5 minutes</button></li>
@@ -43,7 +60,7 @@
 			<ul class="setup-player-list">
 				<li v-for="playerName in playerNames"><RotatedBGText class="setup-player-list-item orange-rotated">{{ playerName }}</RotatedBGText></li>
 			</ul>
-			<span style="margin: 0;">And you have {{ timeLimit }} minutes!</span>
+			<span style="margin: 0;">And you have <InlineIcon :imgurl="'time'" :size="30"></InlineIcon><RotatedBGText :tilt="3" style="--bgcolor: var(--black); color: var(--white)">{{ timeLimit }} minutes!</RotatedBGText></span>
 			<button class="button black-button" @click="goToNextScreen">Start game</button>
 		</div>
 
@@ -71,10 +88,10 @@
 		</div>
 		<div v-if="gamePhase==='game' && roundPhase===1" class="main-game-container" style="background-color: var(--black);">
 			<section class="game-info-section">
-				<h3 class="timer" :style="`color: ${timeLeft < 10 ? '#fc2803' : 'var(--white)'};`">{{ timeRemainingCounter }}</h3>
+				<h3 class="timer" :style="`color: ${timeLeft < 10 ? '#fc2803' : 'var(--white)'};`"><InlineIcon :imgurl="'time-white'" :size="40"></InlineIcon> {{ timeRemainingCounter }}</h3>
 				<ul class="disabled-words-section">
-					<li style="font-size: 2vw; font-weight: 300;">Don't use these words!</li>
-					<li v-for="word in shuffledArtworks[imageIndex]?.forbiddenWords">{{ word }}</li>
+					<li class="disabled-word" style="font-size: 1.5vw; font-weight: 300;">Don't use these words!</li>
+					<li class="disabled-word" v-for="word in shuffledArtworks[imageIndex]?.forbiddenWords">{{ word }}</li>
 				</ul>
 				<span class="game-player-score">{{ currentPlayer }}'s score: <span style="color: var(--orange);">{{ playerScore }}</span></span>
 			</section>
@@ -92,6 +109,16 @@
 				</div>
 			</section>
 		</div>
+		<div v-if="gamePhase==='end'" class="main-center-vertically" style="background-color: var(--white);">
+			<h2 style="font-size: 24pt;">Game Ended!</h2>
+			<span style="font-size: 20pt;">Your team score is: <RotatedBGText style="--color: var(--black); --bgcolor: var(--orange);">{{ totalScore }}</RotatedBGText></span>
+			<span style="font-size: 20pt;">Individual scores:</span>
+			<span v-for="(playername, index) in playerNames" style="font-size: 20pt;">{{ playername }}: <RotatedBGText style="--color: var(--white); --bgcolor: var(--black);">{{playerScores[index]}}</RotatedBGText></span>
+			<div class="end-button-container">
+				<button class="button black-button" style="margin: 20px" @click="playAgain">Play again!</button>
+				<button class="button white-button" style="margin: 20px" @click="backToTitle">Exit</button>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -102,6 +129,7 @@
 	import { useRouter } from 'vue-router'
 	import RotatedBGText from './RotatedBGText.vue';
 	import artworkData from '../../text/data.json';
+	import InlineIcon from './InlineIcon.vue';
 
 	interface ArtworkData {
 		thumbnail : string;
@@ -111,7 +139,7 @@
 	export default defineComponent({
 		name: 'Game',
 		components: {
-			RotatedBGText
+			RotatedBGText, InlineIcon
 		},
 		props:{
 
@@ -122,7 +150,7 @@
 			const playerCount = ref(0);
 			const timeLimit = ref(3);
 
-			const gamePhase = ref<'setup' | 'travel' | 'game'>('setup');
+			const gamePhase = ref<'setup' | 'travel' | 'game' | 'end'>('setup');
 			const setupPhase = ref(0);
 			const roundPhase = ref(0);
 			const round = ref(0);
@@ -135,8 +163,11 @@
 			const playerScore = ref(0);
 
 			let countingTime = false;
+
+			const showingHomePopup = ref(false);
 			
 			const playerNames = ref<string[]>(['', '', '', '']);
+			const playerScores = ref<number[]>([0,0,0,0]);
 			const allNamesEntered = computed(() => {
 				for (let index = 0; index < playerNames.value.length; index++) {
 					const element = playerNames.value[index];
@@ -155,8 +186,16 @@
 			});
 
 			const imageUrl = computed(()=>{
-                return new URL('/src/assets/jpg/' + shuffledArtworks.value[imageIndex.value]?.thumbnail, import.meta.url).href
+				return 'src/assets/jpg/' + shuffledArtworks.value[imageIndex.value]?.thumbnail;
             });
+
+			const totalScore = computed(()=>{
+				let total = 0;
+				playerScores.value.forEach(element => {
+					total += element;
+				});
+				return total;
+			});
 
 			const timeRemainingCounter = computed(()=>{
 				const adjustedTime = Math.max(0, timeLeft.value);
@@ -184,11 +223,18 @@
 				
 				if(timeLeft.value <= 0){
 					countingTime = false;
+					playerScores.value[round.value] = playerScore.value;
 					showPopup('Round over!');
 					setTimeout(() => {
 						round.value++;
 						currentPlayer.value = playerNames.value[round.value];
 						roundPhase.value = 0;
+
+						if(round.value >= playerNames.value.length){
+							// Means the end of the game, route back to home
+							gamePhase.value = 'end';
+							return;
+						}
 					}, 1500);
 				}
 			}
@@ -236,6 +282,7 @@
 				playerCount.value = pc;
 				// Initialize with empty strings
 				playerNames.value = Array(pc).fill('');
+				playerScores.value = Array(pc).fill(0);
 				goToNextScreen();
 			}
 
@@ -255,13 +302,13 @@
 					gamePhase.value = 'game';
 					round.value = 0;
 					roundPhase.value = 0;
-
 					setupGame();
 				}
 				else if(gamePhase.value === 'game'){
 					roundPhase.value++;
 					if(roundPhase.value === 1){
 						setupGame();
+						countingTime = true;
 					}
 
 					if(roundPhase.value >= 2){
@@ -272,18 +319,10 @@
 			}
 
 			function setupGame(){
-				if(round.value >= playerNames.value.length){
-					// Means the end of the game, route back to home
-					router.push('/');
-					return;
-				}
-				else{
-					currentPlayer.value = playerNames.value[round.value];
-					timeLeft.value = timeLimit.value * 60;
-					timeLeft.value = 15;
-					countingTime = true;
-					playerScore.value = 0;
-				}
+				console.log("Setting pu game");
+				currentPlayer.value = playerNames.value[round.value];
+				timeLeft.value = timeLimit.value * 60;
+				playerScore.value = 0;
 			}
 
 			function showPopup(text : string){
@@ -303,6 +342,36 @@
 				showingPopup.value = false;
 			}
 
+			function backToTitle(){
+				router.push('/');
+				showingHomePopup.value = false;
+			}
+
+			function playAgain(){
+				round.value = 0;
+				roundPhase.value = 0;
+				gamePhase.value = 'setup';
+				if(setupPhase.value < 3){
+					setupPhase.value = 0;
+				}
+				else{
+					setupPhase.value = 3;
+				}
+				showingHomePopup.value = false;
+			}
+
+			function backButton(){
+				setupPhase.value--;
+				if(setupPhase.value < 0){
+					router.push('/');
+					return;
+				}
+			}
+
+			function openHomeMenu(){
+				showingHomePopup.value = true;
+			}
+
 			function shuffleArray<T>(array: T[]): T[] {
 				const shuffled = [...array];
 				for (let i = shuffled.length - 1; i > 0; i--) {
@@ -313,11 +382,11 @@
 			}
 
 			return{
-				router, RotatedBGText, gamePhase, setupPhase, roundPhase, showingPopup,
+				router, RotatedBGText, gamePhase, setupPhase, roundPhase, showingPopup, showingHomePopup,
 				popupText, foundImage, skipImage, darkenerStyle, popupStyle, round, timeLeft,
 				currentPlayer, goToNextScreen, playerCount, timeLimit, chooseTimeLimit, choosePlayerCount,
 				timeRemainingCounter, allNamesEntered, playerNames, imageIndex, shuffledArtworks, imageUrl,
-				playerScore
+				playerScore, playAgain, backToTitle, playerScores, totalScore, openHomeMenu, backButton
 			}
 		}
 });
