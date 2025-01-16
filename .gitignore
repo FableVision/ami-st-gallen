@@ -3,6 +3,7 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+dev/dist/
 **/Assets/AssetStoreTools*
 
 # Visual Studio cache directory
@@ -47,3 +48,4 @@ RECOVER_*.fla
 
 # npm
 node_modules/
+/dev/dist

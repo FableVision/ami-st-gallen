@@ -4,7 +4,7 @@
 			<img class="header-icon" src="@/assets/png/home.png">
 		</button>
 		<button v-if="gamePhase==='setup'" @click="backButton" class="header-button-back">
-			Back
+			Zurück
 			<img class="header-icon-back" src="@/assets/png/back.png">
 		</button>
 		<div v-if="showingHomePopup" class="home-background">
@@ -13,26 +13,26 @@
 					<img class="x-icon" src="@/assets/png/exit.png">
 				</button>
 				<h2 style="font-size: 30pt; margin: 5px;">Menu</h2>
-				<button @click="playAgain" class="button white-button">Restart Game</button>
-				<button @click="backToTitle" class="button white-button">Exit</button>
+				<button @click="playAgain" class="button white-button">Spiel neu starten</button>
+				<button @click="backToTitle" class="button white-button">Beenden</button>
 			</div>
 		</div>
 		<div v-if="gamePhase==='setup' && setupPhase === 0" class="main-center-vertically">
-			<h1 style="margin: 0;"><InlineIcon :size="35" :imgurl="'person'"></InlineIcon> How many players?</h1>
+			<h1 style="margin: 0;"><InlineIcon :size="35" :imgurl="'person'"></InlineIcon>Anzahl Spieler*innen?</h1>
 			<ul class="setup-button-list">
-				<li><button class="setup-button" v-on:click="choosePlayerCount(2)">2 Players</button></li>
-				<li><button class="setup-button" v-on:click="choosePlayerCount(3)">3 Players</button></li>
-				<li><button class="setup-button" v-on:click="choosePlayerCount(4)">4 Players</button></li>
+				<li><button class="setup-button" v-on:click="choosePlayerCount(2)">2 Spieler*innen</button></li>
+				<li><button class="setup-button" v-on:click="choosePlayerCount(3)">3 Spieler*innen</button></li>
+				<li><button class="setup-button" v-on:click="choosePlayerCount(4)">4 Spieler*innen</button></li>
 			</ul>
 		</div>
 		<div v-if="gamePhase==='setup' && setupPhase === 1" class="main-center-vertically">
-			<h1 style="margin: 0;"><InlineIcon :size="35" :imgurl="'person'"></InlineIcon>What are their names?</h1>
+			<h1 style="margin: 0;"><InlineIcon :size="35" :imgurl="'person'"></InlineIcon>Spieler*innen</h1>
 			<ul class="setup-button-grid">
 				<li v-for="(name, index) in playerCount" :key="index">
 					<input 
 					type="text" 
 					maxlength="20" 
-					placeholder="Add name here..." 
+					placeholder="Namen hier eingeben..." 
 					class="setup-input-field"
 					v-model="playerNames[index]"
 					>
@@ -43,46 +43,47 @@
 				@click="goToNextScreen"
 				:disabled="!allNamesEntered"
 				>
-				Next
+				Weiter
 			</button>
 		</div>
 		<div v-if="gamePhase==='setup' && setupPhase === 2" class="main-center-vertically">
-			<h1 style="margin: 0;"><InlineIcon :imgurl="'time'" :size="50"></InlineIcon>How much time per round?</h1>
+			<h1 style="margin: 0;"><InlineIcon :imgurl="'time'" :size="50"></InlineIcon>Wie viel Zeit pro Runde?</h1>
 			<ul class="setup-button-list">
-				<li><button class="setup-button" v-on:click="chooseTimeLimit(3)">3 minutes</button></li>
-				<li><button class="setup-button" v-on:click="chooseTimeLimit(5)">5 minutes</button></li>
-				<li><button class="setup-button" v-on:click="chooseTimeLimit(7)">7 minutes</button></li>
+				<li><button class="setup-button" v-on:click="chooseTimeLimit(1)">1 Minuten</button></li>
+				<li><button class="setup-button" v-on:click="chooseTimeLimit(3)">3 Minuten</button></li>
+				<li><button class="setup-button" v-on:click="chooseTimeLimit(5)">5 Minuten</button></li>
 			</ul>
 		</div>
 		<div v-if="gamePhase==='setup' && setupPhase === 3" class="main-center-vertically">
-			<h1 style="margin: 0;">Let's play!</h1>
-			<span style="margin: 0;">Your players are:</span>
+			<h1 style="margin: 0;">Lasst uns spielen!</h1>
+			<span style="margin: 0;">Eure Spieler*innen sind..."</span>
 			<ul class="setup-player-list">
 				<li v-for="playerName in playerNames"><RotatedBGText class="setup-player-list-item orange-rotated">{{ playerName }}</RotatedBGText></li>
 			</ul>
-			<span style="margin: 0;">And you have <InlineIcon :imgurl="'time'" :size="30"></InlineIcon><RotatedBGText :tilt="3" style="--bgcolor: var(--black); color: var(--white)">{{ timeLimit }} minutes!</RotatedBGText></span>
-			<button class="button black-button" @click="goToNextScreen">Start game</button>
+			<span style="margin: 0;">Und ihr habt...<InlineIcon :imgurl="'time'" :size="30"></InlineIcon><RotatedBGText :tilt="3" style="--bgcolor: var(--black); color: var(--white)">{{ timeLimit }} {{ timeLimit === 1 ? 'Minute' : 'Minuten' }}</RotatedBGText></span>
+			<button class="button black-button" @click="goToNextScreen">Spiel starten</button>
 		</div>
 
 		<!-- TRAVEL STAGE -->
 		<div v-if="gamePhase==='travel'" class="main-center-vertically">
-			<h1 style="margin: 0;">Let's begin!</h1>
-			<span style="margin: 0;">Head to <RotatedBGText class="orange-rotated">Gallery X</RotatedBGText></span>
+			<h1 style="margin: 0;">Lasst uns beginnen!</h1>
+			<span style="margin: 0;">Geht durch die ersten beiden Räume der Ausstellung, bis ihr bei den Portraits ankommt.</span>
 			<br>
-			<button class="button white-button" @click="goToNextScreen">Arrived!</button>
+			<button class="button white-button" @click="goToNextScreen">Wir sind da!</button>
 		</div>
 
 		<!-- ACTUAL GAME STAGE -->
 		<div class="darkener" :style="darkenerStyle">
 			<div class="popup-text" :style="popupStyle">
-				<RotatedBGText :tilt="-5" style="font-weight: bold; font-size: 100pt;">{{ popupText }}</RotatedBGText>
+				<RotatedBGText :tilt="-5" style="font-weight: bold; font-size: 80pt;">{{ popupText }}</RotatedBGText>
 			</div>
 		</div>
 		<div v-if="showingPopup" class="stop-input"></div>
 		<div v-if="gamePhase==='game' && roundPhase===0" class="main-center-vertically" style="background-color: var(--black);">
-			<h1 class="white-text"><RotatedBGText class="orange-rotated" style="font-weight: bold; color: black">{{currentPlayer}}</RotatedBGText>is the guesser!</h1>
-			<span class="white-text">{{currentPlayer}} has <RotatedBGText :tilt="3" class="orange-rotated">3 minutes</RotatedBGText></span>
-			<span class="white-text">to find the artwork the rest of the team is describing.</span>
+			<h1 class="white-text"><RotatedBGText class="orange-rotated" style="font-weight: bold; color: black">{{currentPlayer}}</RotatedBGText> darf raten!</h1>
+			<span class="white-text">{{currentPlayer}} hat <RotatedBGText :tilt="3" class="orange-rotated">{{ timeLimit }} Minuten Zeit</RotatedBGText></span>
+			<span class="white-text">, um möglichtst viele Portaits zu finden, welche der Rest der Gruppe beschreibt.</span>
+			<span class="white-text">Tipp: Zwei Portraits befinden sich auf der Rückseite der blauen Wand.</span>
 			<br>
 			<button class="button white-button" @click="goToNextScreen">Start!</button>
 		</div>
@@ -90,33 +91,33 @@
 			<section class="game-info-section">
 				<h3 class="timer" :style="`color: ${timeLeft < 10 ? '#fc2803' : 'var(--white)'};`"><InlineIcon :imgurl="'time-white'" :size="40"></InlineIcon> {{ timeRemainingCounter }}</h3>
 				<ul class="disabled-words-section">
-					<li class="disabled-word" style="font-size: 1.5vw; font-weight: 300;">Don't use these words!</li>
+					<li class="disabled-word" style="font-size: 1.5vw; font-weight: 300;">Verbotene Wörter:</li>
 					<li class="disabled-word" v-for="word in shuffledArtworks[imageIndex]?.forbiddenWords">{{ word }}</li>
 				</ul>
-				<span class="game-player-score">{{ currentPlayer }}'s score: <span style="color: var(--orange);">{{ playerScore }}</span></span>
+				<span class="game-player-score">{{ currentPlayer }}'s Punktestand: <span style="color: var(--orange);">{{ playerScore }}</span></span>
 			</section>
 			<section class="game-painting-section">
-				<h3 class="round-title">Round <span class="round-title-number">{{ `${round + 1}` }}</span></h3>
+				<h3 class="round-title">Runde <span class="round-title-number">{{ `${round + 1}` }}</span></h3>
 				<div class="image-section">
 					<div class="describe-painting-container">
-						<h4><RotatedBGText :tilt="0" style="--bgcolor: var(--orange)">Describe this painting!</RotatedBGText></h4>
+						<h4><RotatedBGText :tilt="0" style="--bgcolor: var(--orange)">Beschreibe das Gemälde!</RotatedBGText></h4>
 					</div>
 					<img class="image" :src="imageUrl">
 					<div class="image-bottom-section">
-						<button class="image-button white-button" @click="foundImage">Found!</button>
-						<button class="image-button white-button" @click="skipImage">Skip!</button>
+						<button class="image-button white-button" @click="foundImage">Gefunden!</button>
+						<button class="image-button white-button" @click="skipImage">Überspringen!</button>
 					</div>
 				</div>
 			</section>
 		</div>
 		<div v-if="gamePhase==='end'" class="main-center-vertically" style="background-color: var(--white);">
-			<h2 style="font-size: 24pt;">Game Ended!</h2>
-			<span style="font-size: 20pt;">Your team score is: <RotatedBGText style="--color: var(--black); --bgcolor: var(--orange);">{{ totalScore }}</RotatedBGText></span>
-			<span style="font-size: 20pt;">Individual scores:</span>
+			<h2 style="font-size: 24pt;">Das Spiel ist vorbei!</h2>
+			<span style="font-size: 20pt;">Der Punktestand deines Teams ist <RotatedBGText style="--color: var(--black); --bgcolor: var(--orange);">{{ totalScore }}</RotatedBGText></span>
 			<span v-for="(playername, index) in playerNames" style="font-size: 20pt;">{{ playername }}: <RotatedBGText style="--color: var(--white); --bgcolor: var(--black);">{{playerScores[index]}}</RotatedBGText></span>
+			<span style="font-size: 20pt;">ist eure individuelle Punktzahl</span>
 			<div class="end-button-container">
-				<button class="button black-button" style="margin: 20px" @click="playAgain">Play again!</button>
-				<button class="button white-button" style="margin: 20px" @click="backToTitle">Exit</button>
+				<button class="button black-button" style="margin: 20px" @click="playAgain">Nochmal spielen!</button>
+				<button class="button white-button" style="margin: 20px" @click="backToTitle">Beenden</button>
 			</div>
 		</div>
 	</div>
@@ -224,7 +225,7 @@
 				if(timeLeft.value <= 0){
 					countingTime = false;
 					playerScores.value[round.value] = playerScore.value;
-					showPopup('Round over!');
+					showPopup('Runde vorbei!');
 					setTimeout(() => {
 						round.value++;
 						currentPlayer.value = playerNames.value[round.value];
@@ -256,7 +257,7 @@
 			function foundImage(){
 				imagesFound++;
 				playerScore.value += 5;
-				showPopup("SWEET");
+				showPopup("Spitze!");
 
 				setTimeout(() => {
 					nextArtwork();
@@ -264,7 +265,7 @@
 			}
 
 			function skipImage(){
-				showPopup("SKIPPED");
+				showPopup("Übersprungen!");
 				setTimeout(() => {
 					nextArtwork();
 				}, 1500);
