@@ -1,50 +1,283 @@
 [
     {
-        "thumbnailFileName": "APSHOVENThomasvan_G1995.3_SStadler2013.jpg",
-        "forbiddenWords": "Bilder / Künstler / Galerie / Porträt / Raum"
+        "fileName": 1,
+        "imageLink": "1.JPG",
+        "imageLinkToFolder": "1.jpg",
+        "gallery": 1,
+        "forbiddenWords": "Uccello\n/\nFarfalla\n/\nAli\n/\nRamo",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln",
+        "undefined": "text / location should be an image of \"italian/english/german\" -- MASI to send titles and we will make thumbnails of each titles"
     },
     {
-        "thumbnailFileName": "BAROCCIFederico_G2008.1_SStadler2013_mitRahmen.jpg",
-        "forbiddenWords": "Mann / Blick / Locken / nackt / Haut"
+        "fileName": 2,
+        "imageLink": "2.JPG",
+        "imageLinkToFolder": "2.jpg",
+        "gallery": 1,
+        "forbiddenWords": "Insetto\n/\nTavolo\n/\nMarmellata\n/\nPentola",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
     },
     {
-        "thumbnailFileName": "BRUYNBartholomaus_G2002.2_SStadler2013.jpg",
-        "forbiddenWords": "Mann / Fell / Bart / Hut / Grün / Hand"
+        "fileName": 3,
+        "imageLink": "3.JPG",
+        "imageLinkToFolder": "3.jpg",
+        "gallery": 1,
+        "forbiddenWords": "Sole\n/\nCerchio\n/\nInsetto\n/\nRamo\n",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
     },
     {
-        "thumbnailFileName": "CUYPJacobGerritsz._G2010.2_SStadler2013_mitRahmen.jpg",
-        "forbiddenWords": "Frau / Spitze / Wangen / Frisur / Grau "
+        "fileName": 16,
+        "imageLink": "16.TIF",
+        "imageLinkToFolder": "16.jpg",
+        "gallery": 1,
+        "forbiddenWords": "montagna\n/\nblu\n/\npaesaggio\n/\nlinee",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
     },
     {
-        "thumbnailFileName": "G2001.20_CEULENCornelisJonsonvan_SStadler2020.jpg",
-        "forbiddenWords": "Schwarz / Schmuck / Gold / Kopf / Hand"
+        "fileName": 17,
+        "imageLink": "17.TIF",
+        "imageLinkToFolder": "17.jpg",
+        "gallery": 1,
+        "forbiddenWords": "Casa\n/\nfinestre\n/\nMatita\n/\nEdificio",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
     },
     {
-        "thumbnailFileName": "G2012.9_BETTINiccolodiGiovannizugeschrieben_mitFarbkarte.jpg",
-        "forbiddenWords": "Frau / Kragen / Handschuhe / Ring / Kleid"
+        "fileName": 4,
+        "imageLink": "4.jpg",
+        "imageLinkToFolder": "4.jpg",
+        "gallery": 1,
+        "forbiddenWords": "Maschera\n/\nCapelli\n/\nVolto\n/\nSedia",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
     },
     {
-        "thumbnailFileName": "G2014.23_BETTINiccolodiGiovannizugeschrieben_SStadler2014_mitRahmen.jpg",
-        "forbiddenWords": "Mann / Schwarz / Bart / Grau / Hand"
+        "fileName": 12,
+        "imageLink": "12.jpg",
+        "imageLinkToFolder": "12.jpg",
+        "gallery": 1,
+        "forbiddenWords": "Mano\n/\nProfilo\n/\nOrecchio\n/\nGiallo\n",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
     },
     {
-        "thumbnailFileName": "GRAFFAnton_G1936.7_HWeber.jpg",
-        "forbiddenWords": "Frau / Grau / Rot / Schmuck / alt"
+        "fileName": 13,
+        "imageLink": "13.jpg",
+        "imageLinkToFolder": "13.jpg",
+        "gallery": 1,
+        "forbiddenWords": "Ramo\n/\nAlbero\n/\nNatura\n/\nMatita",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
     },
     {
-        "thumbnailFileName": "MettlerJohannes_BildniseinesHerrn_1860_G2016.10_SStadler.jpg",
-        "forbiddenWords": "Mann / dick / Hemd / Schwarz / Stuhl"
+        "fileName": 14,
+        "imageLink": "14.jpeg",
+        "imageLinkToFolder": "14.jpg",
+        "gallery": 1,
+        "forbiddenWords": "Frecce\n/\nCollina\n/\nColori\n/\nEnergia\n",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
     },
     {
-        "thumbnailFileName": "SalviGiovanniBattista_MadonnaimGebet.jpg",
-        "forbiddenWords": "Frau / Beten / Heiligenschein / Blau / Hände"
+        "fileName": 21,
+        "imageLink": "21.jpg",
+        "imageLinkToFolder": "21.jpg",
+        "gallery": 1,
+        "forbiddenWords": "Paesaggio\n/\nAlberi\n/\nCasa\n/\nMontagna\n",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
     },
     {
-        "thumbnailFileName": "VerkoljeJan_PortraiteinesstehendenHerrn_ParkimHG_1684_nachRestaurierung_G2014.32_SStadler.jpg",
-        "forbiddenWords": "Mann / Hand / Hintergrund / Bücher / Tisch"
+        "fileName": 22,
+        "imageLink": "22.jpg",
+        "imageLinkToFolder": "22.jpg",
+        "gallery": 1,
+        "forbiddenWords": "Tetto\n/\nAlbero\n/\nFinestra\n/\nColline",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
     },
     {
-        "thumbnailFileName": "WaldmuullerFerdinandGeorg_TheresePeucker-Katzenberger_1856_SStadler2013_mitRahmen.jpg",
-        "forbiddenWords": "Frau / Hals / Weiss / Hand / Stoff"
+        "fileName": 23,
+        "imageLink": "23.jpg",
+        "imageLinkToFolder": "23.jpg",
+        "gallery": 1,
+        "forbiddenWords": "Montagna\n/\nProfilo\n/\nCappello\n/\nPaesaggio",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
+    },
+    {
+        "fileName": 27,
+        "imageLink": "27.jpg",
+        "imageLinkToFolder": "27.jpg",
+        "gallery": 1,
+        "forbiddenWords": "Geometria\n/\nLabirinto\n/\nTessitura\n/\nRitmo\n\n",
+        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
+    },
+    {
+        "fileName": 15,
+        "imageLink": "15.jpg",
+        "imageLinkToFolder": "15.jpg",
+        "gallery": 2,
+        "forbiddenWords": "Cubo\n/\nDisegno\n/\nLinea\n/\nRipetizione\n\n",
+        "locationTexts": "David Weiss. Disegno e trasformazione\n/\nDavid Weiss: Drawing and Transformation\n/\nDavid Weiss. Zeichnung und Verwandlung"
+    },
+    {
+        "fileName": 18,
+        "imageLink": "18.jpeg",
+        "imageLinkToFolder": "18.jpg",
+        "gallery": 2,
+        "forbiddenWords": "Linea\n/\nCollage\n/\nCorpo\n/\nBerretto",
+        "locationTexts": "David Weiss. Disegno e trasformazione\n/\nDavid Weiss: Drawing and Transformation\n/\nDavid Weiss. Zeichnung und Verwandlung"
+    },
+    {
+        "fileName": 19,
+        "imageLink": "19.jpeg",
+        "imageLinkToFolder": "19.jpg",
+        "gallery": 2,
+        "forbiddenWords": "Volto\n/\nOcchi\n/\nScrittura\n/\nStriscia\n",
+        "locationTexts": "David Weiss. Disegno e trasformazione\n/\nDavid Weiss: Drawing and Transformation\n/\nDavid Weiss. Zeichnung und Verwandlung"
+    },
+    {
+        "fileName": 30,
+        "imageLink": "30.jpg",
+        "imageLinkToFolder": "30.jpg",
+        "gallery": 2,
+        "forbiddenWords": "Interno\n/\nCane\n/\nBalcone\n/\nLuce\n\n",
+        "locationTexts": "David Weiss. Disegno e trasformazione\n/\nDavid Weiss: Drawing and Transformation\n/\nDavid Weiss. Zeichnung und Verwandlung"
+    },
+    {
+        "fileName": 32,
+        "imageLink": "32.jpg",
+        "imageLinkToFolder": "32.jpg",
+        "gallery": 2,
+        "forbiddenWords": "Cervello\n/\nCorpo\n/\nScarpe\n/\nCittà",
+        "locationTexts": "David Weiss. Disegno e trasformazione\n/\nDavid Weiss: Drawing and Transformation\n/\nDavid Weiss. Zeichnung und Verwandlung"
+    },
+    {
+        "fileName": 20,
+        "imageLink": "20.jpeg",
+        "imageLinkToFolder": "20.jpg",
+        "gallery": 3,
+        "forbiddenWords": "Giallo\n/\nAnimale\n/\nFirma\n/\nRosso\n",
+        "locationTexts": "Forme di resistenza: disegno, stampa e comunità\n/\nForms of Resistance: Drawing, Print, and Community\n/\nFormen des Widerstands: Zeichnen, Drucken und Gemeinschaft"
+    },
+    {
+        "fileName": 33,
+        "imageLink": "33.jpeg",
+        "imageLinkToFolder": "33.jpg",
+        "gallery": 3,
+        "forbiddenWords": "costruttivismo\n/\nlinee\n/\ngriglia\n/\ngeometria",
+        "locationTexts": "Forme di resistenza: disegno, stampa e comunità\n/\nForms of Resistance: Drawing, Print, and Community\n/\nFormen des Widerstands: Zeichnen, Drucken und Gemeinschaft"
+    },
+    {
+        "fileName": 34,
+        "imageLink": "34",
+        "imageLinkToFolder": "34.jpg",
+        "gallery": 3,
+        "forbiddenWords": "viso\n/\ndonna\n/\nverde\n/\nfigura",
+        "locationTexts": "Forme di resistenza: disegno, stampa e comunità\n/\nForms of Resistance: Drawing, Print, and Community\n/\nFormen des Widerstands: Zeichnen, Drucken und Gemeinschaft"
+    },
+    {
+        "fileName": 35,
+        "imageLink": "35",
+        "imageLinkToFolder": "35.jpg",
+        "gallery": 3,
+        "forbiddenWords": "rivista\n/\npagine\n/\nlibro\n/\nvetrina ",
+        "locationTexts": "Forme di resistenza: disegno, stampa e comunità\n/\nForms of Resistance: Drawing, Print, and Community\n/\nFormen des Widerstands: Zeichnen, Drucken und Gemeinschaft"
+    },
+    {
+        "fileName": 10,
+        "imageLink": "10.jpg",
+        "imageLinkToFolder": "10.jpg",
+        "gallery": 4,
+        "forbiddenWords": "Testa\n/\nViola\n/\nGeometrico\n/\nProfilo",
+        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
+    },
+    {
+        "fileName": 5,
+        "imageLink": "5.tif",
+        "imageLinkToFolder": "5.jpg",
+        "gallery": 4,
+        "forbiddenWords": "albero\n/\ncielo\n/\nuomo\n/\nmontagna",
+        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
+    },
+    {
+        "fileName": 6,
+        "imageLink": "6.jpeg",
+        "imageLinkToFolder": "6.jpg",
+        "gallery": 4,
+        "forbiddenWords": "Becco\n/\nLegno\n/\nTesta\n/\nUccello",
+        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
+    },
+    {
+        "fileName": 7,
+        "imageLink": "7.jpg",
+        "imageLinkToFolder": "7.jpg",
+        "gallery": 4,
+        "forbiddenWords": "Studio\n/\nPittura\n/\nCavalletto\n/\nFinestra",
+        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
+    },
+    {
+        "fileName": 8,
+        "imageLink": "8.jpg",
+        "imageLinkToFolder": "8.jpg",
+        "gallery": 4,
+        "forbiddenWords": "Topolino\n/\nFumetto\n/\nBottiglia\n/\nStelle",
+        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
+    },
+    {
+        "fileName": 9,
+        "imageLink": "9.jpg",
+        "imageLinkToFolder": "9.jpg",
+        "gallery": 4,
+        "forbiddenWords": "Muso\n/\nCartone\n/\nOrecchie\n/\nColori",
+        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
+    },
+    {
+        "fileName": 11,
+        "imageLink": "11.jpg",
+        "imageLinkToFolder": "11.jpg",
+        "gallery": 4,
+        "forbiddenWords": "Nuvole\n/\nColori\n/\nSagome\n/\nSospese\n\n",
+        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
+    },
+    {
+        "fileName": 28,
+        "imageLink": "28.jpg",
+        "imageLinkToFolder": "28.jpg",
+        "gallery": 4,
+        "forbiddenWords": "Fuoco\n/\nRosso\n/\nCellula\n/\nEsplosione\n\n",
+        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
+    },
+    {
+        "fileName": 29,
+        "imageLink": "29.jpg",
+        "imageLinkToFolder": "29.jpg",
+        "gallery": 4,
+        "forbiddenWords": "Lucertola\n/\nAnimale\n/\nCombattimento\n/\nSquame",
+        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
+    },
+    {
+        "fileName": 24,
+        "imageLink": "24.jpg",
+        "imageLinkToFolder": "24.jpg",
+        "gallery": 5,
+        "forbiddenWords": "Fumetto\n/\nDonna\n/\nNavicella\n/\nParlare\n\n",
+        "locationTexts": "Zurigo-Carona. Disegnare la distanza\n/\nZurich–Carona: Drawing the Distance\n/\nZürich–Carona. Die Distanz zeichnen"
+    },
+    {
+        "fileName": 25,
+        "imageLink": "25.jpg",
+        "imageLinkToFolder": "25.jpg",
+        "gallery": 5,
+        "forbiddenWords": "Dormire\n/\nMontagna\n/\nPaesaggio\n/\nLetto\n\n",
+        "locationTexts": "Zurigo-Carona. Disegnare la distanza\n/\nZurich–Carona: Drawing the Distance\n/\nZürich–Carona. Die Distanz zeichnen"
+    },
+    {
+        "fileName": 26,
+        "imageLink": "26.tif",
+        "imageLinkToFolder": "26.jpg",
+        "gallery": 5,
+        "forbiddenWords": "Figura\n/\nOmbra\n/\nInterno\n/\nSilenzio\n\n",
+        "locationTexts": "Zurigo-Carona. Disegnare la distanza\n/\nZurich–Carona: Drawing the Distance\n/\nZürich–Carona. Die Distanz zeichnen"
+    },
+    {
+        "fileName": 31,
+        "imageLink": "31.jpg",
+        "imageLinkToFolder": "31.jpg",
+        "gallery": 5,
+        "forbiddenWords": "Pennello\n/\nVolto\n/\nVaso\n/\nDisegno\n",
+        "locationTexts": "Zurigo-Carona. Disegnare la distanza\n/\nZurich–Carona: Drawing the Distance\n/\nZürich–Carona. Die Distanz zeichnen"
     }
 ]

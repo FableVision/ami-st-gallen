@@ -3,8 +3,8 @@
 		<button @click="openHomeMenu" class="header-button-home">
 			<img class="header-icon" src="@/assets/png/home.png">
 		</button>
-		<button v-if="gamePhase==='setup'" @click="backButton" class="header-button-back">
-			Zurück
+		<button v-if="gamePhase==='setup'" @click="backButton" class="header-button-back" style="color: var(--black)">
+			Esci
 			<img class="header-icon-back" src="@/assets/png/back.png">
 		</button>
 		<div v-if="showingHomePopup" class="home-background">
@@ -13,26 +13,26 @@
 					<img class="x-icon" src="@/assets/png/exit.png">
 				</button>
 				<h2 style="font-size: 30pt; margin: 5px;">Menu</h2>
-				<button @click="playAgain" class="button white-button">Spiel neu starten</button>
-				<button @click="backToTitle" class="button white-button">Beenden</button>
+				<button @click="playAgain" class="button white-button">Gioca di nuovo</button>
+				<button @click="backToTitle" style="color: var(--black)" class="button white-button">Esci</button>
 			</div>
 		</div>
 		<div v-if="gamePhase==='setup' && setupPhase === 0" class="main-center-vertically">
-			<h1 style="margin: 0;"><InlineIcon :size="35" :imgurl="'person'"></InlineIcon>Anzahl Spieler*innen?</h1>
+			<h1 style="margin: 0;"><InlineIcon :size="35" :imgurl="'person'"></InlineIcon>Numero di giocatori e giocatrici</h1>
 			<ul class="setup-button-list">
-				<li><button class="setup-button" v-on:click="choosePlayerCount(2)">2 Spieler*innen</button></li>
-				<li><button class="setup-button" v-on:click="choosePlayerCount(3)">3 Spieler*innen</button></li>
-				<li><button class="setup-button" v-on:click="choosePlayerCount(4)">4 Spieler*innen</button></li>
+				<li><button class="setup-button" v-on:click="choosePlayerCount(2)">2 giocatori</button></li>
+				<li><button class="setup-button" v-on:click="choosePlayerCount(3)">3 giocatori</button></li>
+				<li><button class="setup-button" v-on:click="choosePlayerCount(4)">4 giocatori</button></li>
 			</ul>
 		</div>
 		<div v-if="gamePhase==='setup' && setupPhase === 1" class="main-center-vertically">
-			<h1 style="margin: 0;"><InlineIcon :size="35" :imgurl="'person'"></InlineIcon>Spieler*innen</h1>
+			<h1 style="margin: 0;"><InlineIcon :size="35" :imgurl="'person'"></InlineIcon>Giocatori e giocatrici</h1>
 			<ul class="setup-button-grid">
 				<li v-for="(name, index) in playerCount" :key="index">
 					<input 
 					type="text" 
 					maxlength="20" 
-					placeholder="Namen hier eingeben..." 
+					placeholder="Inserire qui i nomi..." 
 					class="setup-input-field"
 					v-model="playerNames[index]"
 					>
@@ -43,81 +43,101 @@
 				@click="goToNextScreen"
 				:disabled="!allNamesEntered"
 				>
-				Weiter
+				Avanti
 			</button>
 		</div>
 		<div v-if="gamePhase==='setup' && setupPhase === 2" class="main-center-vertically">
-			<h1 style="margin: 0;"><InlineIcon :imgurl="'time'" :size="50"></InlineIcon>Wie viel Zeit pro Runde?</h1>
+			<h1 style="margin: 0;"><InlineIcon :imgurl="'time'" :size="50"></InlineIcon>Quanto tempo per ogni turno?</h1>
 			<ul class="setup-button-list">
-				<li><button class="setup-button" v-on:click="chooseTimeLimit(1)">1 Minuten</button></li>
-				<li><button class="setup-button" v-on:click="chooseTimeLimit(3)">3 Minuten</button></li>
-				<li><button class="setup-button" v-on:click="chooseTimeLimit(5)">5 Minuten</button></li>
+				<li><button class="setup-button" v-on:click="chooseTimeLimit(1)">1 minuto</button></li>
+				<li><button class="setup-button" v-on:click="chooseTimeLimit(3)">3 minuti</button></li>
+				<li><button class="setup-button" v-on:click="chooseTimeLimit(5)">5 minuti</button></li>
 			</ul>
 		</div>
 		<div v-if="gamePhase==='setup' && setupPhase === 3" class="main-center-vertically">
-			<h1 style="margin: 0;">Lasst uns spielen!</h1>
-			<span style="margin: 0;">Eure Spieler*innen sind..."</span>
+			<h1 style="margin: 0;">Iniziamo a giocare!</h1>
+			<span style="margin: 0;">I partecipanti sono..."</span>
 			<ul class="setup-player-list">
 				<li v-for="playerName in playerNames"><RotatedBGText class="setup-player-list-item orange-rotated">{{ playerName }}</RotatedBGText></li>
 			</ul>
-			<span style="margin: 0;">Und ihr habt...<InlineIcon :imgurl="'time'" :size="30"></InlineIcon><RotatedBGText :tilt="3" style="--bgcolor: var(--black); color: var(--white)">{{ timeLimit }} {{ timeLimit === 1 ? 'Minute' : 'Minuten' }}</RotatedBGText></span>
-			<button class="button black-button" @click="goToNextScreen">Spiel starten</button>
+			<span style="margin: 0;">E avete a disposizione...<InlineIcon :imgurl="'time'" :size="30"></InlineIcon><RotatedBGText :tilt="3" style="--bgcolor: var(--black); color: var(--white)">{{ timeLimit }} {{ timeLimit === 1 ? 'minuto' : 'minuti' }}</RotatedBGText></span>
+			<button class="button black-button" @click="goToNextScreen">Inizia il gioco</button>
 		</div>
 
 		<!-- TRAVEL STAGE -->
 		<div v-if="gamePhase==='travel'" class="main-center-vertically">
-			<h1 style="margin: 0;">Lasst uns beginnen!</h1>
-			<span style="margin: 0;">Geht durch die ersten beiden Räume der Ausstellung, bis ihr bei den Portraits ankommt.</span>
+			<h1 style="margin: 0;">Cominciamo!</h1>
+			<span style="margin: 0; text-align: center;">Le opere d’arte che stai cercando si trovano in diverse sezioni dello spazio. Segui le indicazioni per trovare la sala in cui devi andare.</span>
 			<br>
-			<button class="button white-button" @click="goToNextScreen">Wir sind da!</button>
+			<button class="button white-button" @click="goToNextScreen">Arrivati!</button>
 		</div>
 
 		<!-- ACTUAL GAME STAGE -->
 		<div class="darkener" :style="darkenerStyle">
 			<div class="popup-text" :style="popupStyle">
-				<RotatedBGText :tilt="-5" style="font-weight: bold; font-size: 80pt;">{{ popupText }}</RotatedBGText>
+				<RotatedBGText v-if="!showingNextGalleryPopup" :tilt="-5" style="font-weight: bold; font-size: 70pt;">{{ popupText }}</RotatedBGText>
+				<RotatedBGText v-if="showingNextGalleryPopup" :tilt="-2" style="font-weight: bold; font-size: 35pt;">ITA Next Gallery: ITA</RotatedBGText>
+				<div style="height: 1.5rem;"></div>
+				<RotatedBGText v-if="showingNextGalleryPopup" :tilt="0" style="font-weight: bold; font-size: 15pt;">
+					<div v-for="gallery in shuffledArtworks[imageIndex]?.locationTexts" class="notranslate" translate="no">
+						{{ gallery }}
+					</div>
+				</RotatedBGText>
+				<div style="height: 1.5rem;"></div>
 			</div>
 		</div>
 		<div v-if="showingPopup" class="stop-input"></div>
+		<button 
+			v-if="showingPopup && showingNextGalleryPopup" 
+			@click="onFoundGallery" 
+			class="button white-button arrived-button-popup">
+				Arrivati!
+		</button>
 		<div v-if="gamePhase==='game' && roundPhase===0" class="main-center-vertically" style="background-color: var(--black);">
-			<h1 class="white-text"><RotatedBGText class="orange-rotated" style="font-weight: bold; color: black">{{currentPlayer}}</RotatedBGText> darf raten!</h1>
-			<span class="white-text">{{currentPlayer}} hat <RotatedBGText :tilt="3" class="orange-rotated">{{ timeLimit }} Minuten Zeit</RotatedBGText></span>
-			<span class="white-text">, um möglichtst viele Portaits zu finden, welche der Rest der Gruppe beschreibt.</span>
-			<span class="white-text">Tipp: Zwei Portraits befinden sich auf der Rückseite der blauen Wand.</span>
+			<h1 class="white-text"><RotatedBGText class="orange-rotated" style="font-weight: bold; color: black">{{currentPlayer}}</RotatedBGText> può indovinare!</h1>
+			<span class="white-text">{{currentPlayer}} ha <RotatedBGText :tilt="3" class="orange-rotated">{{ timeLimit }} minuti di tempo</RotatedBGText></span>
+			<span class="white-text"> per trovare il maggior numero possibile di ritratti che il resto del gruppo descrive.</span>
+			<!-- <span class="white-text">Tipp: Zwei Portraits befinden sich auf der Rückseite der blauen Wand.</span> -->
 			<br>
-			<button class="button white-button" @click="goToNextScreen">Start!</button>
+			<button class="button white-button" @click="goToNextScreen">Inizia!</button>
 		</div>
 		<div v-if="gamePhase==='game' && roundPhase===1" class="main-game-container" style="background-color: var(--black);">
 			<section class="game-info-section">
 				<h3 class="timer" :style="`color: ${timeLeft < 10 ? '#fc2803' : 'var(--white)'};`"><InlineIcon :imgurl="'time-white'" :size="40"></InlineIcon> {{ timeRemainingCounter }}</h3>
 				<ul class="disabled-words-section">
-					<li class="disabled-word" style="font-size: 1.5vw; font-weight: 300;">Verbotene Wörter:</li>
+					<li translate="no" class="location-word notranslate" v-for="word in shuffledArtworks[imageIndex]?.locationTexts">
+						{{ word }}
+					</li>
+					<div style="height: 2rem;">{{  }}</div>
+					<li class="disabled-word" style="font-size: 1.5vw; font-weight: 700;">
+						<RotatedBGText :tilt="2" style="--bgcolor: var(--orange)">Parole vietate:</RotatedBGText>
+					</li>
 					<li class="disabled-word" v-for="word in shuffledArtworks[imageIndex]?.forbiddenWords">{{ word }}</li>
 				</ul>
-				<span class="game-player-score">{{ currentPlayer }}'s Punktestand: <span style="color: var(--orange);">{{ playerScore }}</span></span>
+				<span class="game-player-score">Punteggio di {{ currentPlayer }}: <span style="color: var(--orange);">{{ playerScore }}</span></span>
 			</section>
 			<section class="game-painting-section">
-				<h3 class="round-title">Runde <span class="round-title-number">{{ `${round + 1}` }}</span></h3>
+				<h3 class="round-title">Turno <span class="round-title-number">{{ `${round + 1}` }}</span></h3>
 				<div class="image-section">
 					<div class="describe-painting-container">
-						<h4><RotatedBGText :tilt="0" style="--bgcolor: var(--orange)">Beschreibe das Gemälde!</RotatedBGText></h4>
+						<h4><RotatedBGText :tilt="0" style="--bgcolor: var(--orange)">Descrivi il dipinto!</RotatedBGText></h4>
 					</div>
 					<img class="image" :src="imageUrl">
 					<div class="image-bottom-section">
-						<button class="image-button white-button" @click="foundImage">Gefunden!</button>
-						<button class="image-button white-button" @click="skipImage">Überspringen!</button>
+						<button class="image-button white-button" @click="foundImage">Trovato!</button>
+						<button class="image-button white-button" @click="skipImage">Salta!</button>
 					</div>
 				</div>
 			</section>
 		</div>
 		<div v-if="gamePhase==='end'" class="main-center-vertically" style="background-color: var(--white);">
-			<h2 style="font-size: 24pt;">Das Spiel ist vorbei!</h2>
-			<span style="font-size: 20pt;">Der Punktestand deines Teams ist <RotatedBGText style="--color: var(--black); --bgcolor: var(--orange);">{{ totalScore }}</RotatedBGText></span>
+			<h2 style="font-size: 24pt;">Il gioco è finito!</h2>
+			<span style="font-size: 20pt;">Il punteggio della tua squadra è <RotatedBGText style="--color: var(--black); --bgcolor: var(--orange);">{{ totalScore }}</RotatedBGText></span>
 			<span v-for="(playername, index) in playerNames" style="font-size: 20pt;">{{ playername }}: <RotatedBGText style="--color: var(--white); --bgcolor: var(--black);">{{playerScores[index]}}</RotatedBGText></span>
-			<span style="font-size: 20pt;">ist eure individuelle Punktzahl</span>
+			<span style="font-size: 20pt;">sono i vostri punteggi individuali.</span>
 			<div class="end-button-container">
-				<button class="button black-button" style="margin: 20px" @click="playAgain">Nochmal spielen!</button>
-				<button class="button white-button" style="margin: 20px" @click="backToTitle">Beenden</button>
+				<button class="button black-button" style="margin: 20px; color: var(--white);" @click="playAgain">Gioca di nuovo!</button>
+				<button class="button white-button" style="margin: 20px; color: var(--black);" @click="backToTitle">Esci</button>
 			</div>
 		</div>
 	</div>
@@ -135,6 +155,8 @@
 	interface ArtworkData {
 		thumbnail : string;
 		forbiddenWords : string[];
+		locationTexts: string[];
+		gallery: number;
 	}
 
 	export default defineComponent({
@@ -156,6 +178,8 @@
 			const roundPhase = ref(0);
 			const round = ref(0);
 			const imageIndex = ref(0);
+
+			const locationTexts = ref<string[]>([]);
 
 			const shuffledArtworks = ref<ArtworkData[]>([]);
 			
@@ -209,13 +233,15 @@
 			});
 
 			const showingPopup = ref(false);
-			const popupText = ref('SWEET');
+			const popupText = ref('Fantastico!');
+			const showingNextGalleryPopup = ref(false);
 
 			let imagesFound = 0;
 
 			onMounted(()=>{
 				recreateArtworkData();
 				setInterval(decreaseTime, 1000);
+				document.body.style.backgroundColor = 'var(--white)';
 			});
 
 			function decreaseTime(){
@@ -225,7 +251,7 @@
 				if(timeLeft.value <= 0){
 					countingTime = false;
 					playerScores.value[round.value] = playerScore.value;
-					showPopup('Runde vorbei!');
+					showPopup('Fine del turno!');
 					setTimeout(() => {
 						round.value++;
 						currentPlayer.value = playerNames.value[round.value];
@@ -242,22 +268,37 @@
 
 			function recreateArtworkData(){
 				shuffledArtworks.value = [];
-				console.log(artworkData);
+				const groupedByGallery: Record<number, any[]> = {};
 				artworkData.forEach(element => {
-					const array = element.forbiddenWords.split('/').map(item => item.trim());
-					console.log(array);
-					shuffledArtworks.value.push({
-						thumbnail: element.thumbnailFileName,
-						forbiddenWords: array
+					if (!groupedByGallery[element.gallery]) {
+						groupedByGallery[element.gallery] = [];
+					}
+					
+					const forbiddenWordsArray = element.forbiddenWords.split('/').map(item => item.trim());
+					const locationTextsArray = element.locationTexts.split('/').map(item => item.trim());
+					
+					groupedByGallery[element.gallery].push({
+						thumbnail: element.imageLinkToFolder,
+						forbiddenWords: forbiddenWordsArray,
+						locationTexts: locationTextsArray,
+						gallery: element.gallery
 					});
 				});
-				shuffledArtworks.value = shuffleArray(shuffledArtworks.value);
+
+				const galleryKeys = Object.keys(groupedByGallery).map(Number);
+				const shuffledGalleries = shuffleArray(galleryKeys);
+
+				shuffledArtworks.value = [];
+				shuffledGalleries.forEach(galleryKey => {
+					const shuffledGalleryItems = shuffleArray(groupedByGallery[galleryKey]);
+					shuffledArtworks.value.push(...shuffledGalleryItems);
+				});
 			}
 
 			function foundImage(){
 				imagesFound++;
 				playerScore.value += 5;
-				showPopup("Spitze!");
+				showPopup("Fantastico!");
 
 				setTimeout(() => {
 					nextArtwork();
@@ -265,7 +306,7 @@
 			}
 
 			function skipImage(){
-				showPopup("Übersprungen!");
+				showPopup("Saltato!");
 				setTimeout(() => {
 					nextArtwork();
 				}, 1500);
@@ -276,7 +317,22 @@
 				if(imageIndex.value >= shuffledArtworks.value.length){
 					recreateArtworkData();
 					imageIndex.value = 0;
+
+					goToNextGallery();
 				}
+				else{
+					if(shuffledArtworks.value[imageIndex.value - 1].gallery != 
+						shuffledArtworks.value[imageIndex.value].gallery){
+						goToNextGallery();
+					}
+					
+				}
+			}
+
+			function goToNextGallery(){
+				setTimeout(() => {
+					showNextGalleryPopup();
+				}, 10);
 			}
 
 			function choosePlayerCount(pc : number){
@@ -294,6 +350,7 @@
 
 			function goToNextScreen(){
 				if(gamePhase.value === 'setup'){
+					document.body.style.backgroundColor = 'var(--white)';
 					setupPhase.value++;
 					if(setupPhase.value > 3){
 						gamePhase.value = 'travel';
@@ -304,8 +361,10 @@
 					round.value = 0;
 					roundPhase.value = 0;
 					setupGame();
+					document.body.style.backgroundColor = 'var(--black)';
 				}
 				else if(gamePhase.value === 'game'){
+					document.body.style.backgroundColor = 'var(--black)';
 					roundPhase.value++;
 					if(roundPhase.value === 1){
 						setupGame();
@@ -326,9 +385,23 @@
 				playerScore.value = 0;
 			}
 
-			function showPopup(text : string){
+			function showNextGalleryPopup(){
+				countingTime = false;
+
+				showingPopup.value = true;
+				showingNextGalleryPopup.value = true;
+			}
+
+			function onFoundGallery(){
+				hidePopup();
+				countingTime = true;
+				showingNextGalleryPopup.value = false;
+			}
+
+			function showPopup(text : string, duration: number = 1500){
 				const countingTimeBefore = countingTime;
 				countingTime = false;
+				showingNextGalleryPopup.value = false;
 
 				popupText.value = text;
 				showingPopup.value = true;
@@ -336,7 +409,7 @@
 				setTimeout(() => {
 					hidePopup();
 					countingTime = countingTimeBefore;
-				}, 1500);
+				}, duration);
 			}
 
 			function hidePopup(){
@@ -387,7 +460,8 @@
 				popupText, foundImage, skipImage, darkenerStyle, popupStyle, round, timeLeft,
 				currentPlayer, goToNextScreen, playerCount, timeLimit, chooseTimeLimit, choosePlayerCount,
 				timeRemainingCounter, allNamesEntered, playerNames, imageIndex, shuffledArtworks, imageUrl,
-				playerScore, playAgain, backToTitle, playerScores, totalScore, openHomeMenu, backButton
+				playerScore, playAgain, backToTitle, playerScores, totalScore, openHomeMenu, backButton,
+				showingNextGalleryPopup, onFoundGallery
 			}
 		}
 });
