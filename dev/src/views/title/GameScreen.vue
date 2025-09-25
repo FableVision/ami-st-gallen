@@ -56,7 +56,7 @@
 		</div>
 		<div v-if="gamePhase==='setup' && setupPhase === 3" class="main-center-vertically">
 			<h1 style="margin: 0;">Iniziamo a giocare!</h1>
-			<span style="margin: 0;">I partecipanti sono..."</span>
+			<span style="margin: 0;">I partecipanti sono...</span>
 			<ul class="setup-player-list">
 				<li v-for="playerName in playerNames"><RotatedBGText class="setup-player-list-item orange-rotated">{{ playerName }}</RotatedBGText></li>
 			</ul>
@@ -76,13 +76,15 @@
 		<div class="darkener" :style="darkenerStyle">
 			<div class="popup-text" :style="popupStyle">
 				<RotatedBGText v-if="!showingNextGalleryPopup" :tilt="-5" style="font-weight: bold; font-size: 70pt;">{{ popupText }}</RotatedBGText>
-				<RotatedBGText v-if="showingNextGalleryPopup" :tilt="-2" style="font-weight: bold; font-size: 35pt;">ITA Next Gallery: ITA</RotatedBGText>
-				<div style="height: 1.5rem;"></div>
+				<RotatedBGText v-if="showingNextGalleryPopup" :tilt="-2" style="font-weight: bold; font-size: 28pt;">Vai a...</RotatedBGText>
+				<div style="height: 1rem;"></div>
 				<RotatedBGText v-if="showingNextGalleryPopup" :tilt="0" style="font-weight: bold; font-size: 15pt;">
 					<div v-for="gallery in shuffledArtworks[imageIndex]?.locationTexts" class="notranslate" translate="no">
 						{{ gallery }}
 					</div>
 				</RotatedBGText>
+				<div style="height: 1rem;"></div>
+				<RotatedBGText v-if="showingNextGalleryPopup" :tilt="-2" style="font-weight: bold; font-size: 28pt;">...per la tua prossima sfida.</RotatedBGText>
 				<div style="height: 1.5rem;"></div>
 			</div>
 		</div>
@@ -96,14 +98,14 @@
 		<div v-if="gamePhase==='game' && roundPhase===0" class="main-center-vertically" style="background-color: var(--black);">
 			<h1 class="white-text"><RotatedBGText class="orange-rotated" style="font-weight: bold; color: black">{{currentPlayer}}</RotatedBGText> può indovinare!</h1>
 			<span class="white-text">{{currentPlayer}} ha <RotatedBGText :tilt="3" class="orange-rotated">{{ timeLimit }} minuti di tempo</RotatedBGText></span>
-			<span class="white-text"> per trovare il maggior numero possibile di ritratti che il resto del gruppo descrive.</span>
+			<span class="white-text"> per trovare il maggior numero possibile di opere che il resto del gruppo descrive.</span>
 			<!-- <span class="white-text">Tipp: Zwei Portraits befinden sich auf der Rückseite der blauen Wand.</span> -->
 			<br>
 			<button class="button white-button" @click="goToNextScreen">Inizia!</button>
 		</div>
 		<div v-if="gamePhase==='game' && roundPhase===1" class="main-game-container" style="background-color: var(--black);">
 			<section class="game-info-section">
-				<h3 class="timer" :style="`color: ${timeLeft < 10 ? '#fc2803' : 'var(--white)'};`"><InlineIcon :imgurl="'time-white'" :size="40"></InlineIcon> {{ timeRemainingCounter }}</h3>
+				<h3 class="timer notranslate" translate="no" :style="`color: ${timeLeft < 10 ? '#fc2803' : 'var(--white)'};`"><InlineIcon :imgurl="'time-white'" :size="40"></InlineIcon> {{ timeRemainingCounter }}</h3>
 				<ul class="disabled-words-section">
 					<li translate="no" class="location-word notranslate" v-for="word in shuffledArtworks[imageIndex]?.locationTexts">
 						{{ word }}
@@ -120,7 +122,7 @@
 				<h3 class="round-title">Turno <span class="round-title-number">{{ `${round + 1}` }}</span></h3>
 				<div class="image-section">
 					<div class="describe-painting-container">
-						<h4><RotatedBGText :tilt="0" style="--bgcolor: var(--orange)">Descrivi il dipinto!</RotatedBGText></h4>
+						<h4><RotatedBGText :tilt="0" style="--bgcolor: var(--orange)">Descrivi l'opera!</RotatedBGText></h4>
 					</div>
 					<img class="image" :src="imageUrl">
 					<div class="image-bottom-section">
@@ -369,6 +371,8 @@
 					if(roundPhase.value === 1){
 						setupGame();
 						countingTime = true;
+
+						showNextGalleryPopup();
 					}
 
 					if(roundPhase.value >= 2){
@@ -395,7 +399,10 @@
 			function onFoundGallery(){
 				hidePopup();
 				countingTime = true;
-				showingNextGalleryPopup.value = false;
+
+				setTimeout(() => {
+					showingNextGalleryPopup.value = false;
+				}, 100);
 			}
 
 			function showPopup(text : string, duration: number = 1500){

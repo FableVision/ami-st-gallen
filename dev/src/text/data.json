@@ -5,7 +5,7 @@
         "imageLinkToFolder": "1.jpg",
         "gallery": 1,
         "forbiddenWords": "Uccello\n/\nFarfalla\n/\nAli\n/\nRamo",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln",
+        "locationTexts": "Radici creative\n/\nCreative Roots\n/\nKreative Wurzeln",
         "undefined": "text / location should be an image of \"italian/english/german\" -- MASI to send titles and we will make thumbnails of each titles"
     },
     {
@@ -14,39 +14,23 @@
         "imageLinkToFolder": "2.jpg",
         "gallery": 1,
         "forbiddenWords": "Insetto\n/\nTavolo\n/\nMarmellata\n/\nPentola",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
-    },
-    {
-        "fileName": 3,
-        "imageLink": "3.JPG",
-        "imageLinkToFolder": "3.jpg",
-        "gallery": 1,
-        "forbiddenWords": "Sole\n/\nCerchio\n/\nInsetto\n/\nRamo\n",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
+        "locationTexts": "Radici creative\n/\nCreative Roots\n/\nKreative Wurzeln"
     },
     {
         "fileName": 16,
         "imageLink": "16.TIF",
         "imageLinkToFolder": "16.jpg",
         "gallery": 1,
-        "forbiddenWords": "montagna\n/\nblu\n/\npaesaggio\n/\nlinee",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
+        "forbiddenWords": "Montagna\n/\nBlu\n/\nPaesaggio\n/\nLinee",
+        "locationTexts": "Radici creative\n/\nCreative Roots\n/\nKreative Wurzeln"
     },
     {
         "fileName": 17,
         "imageLink": "17.TIF",
         "imageLinkToFolder": "17.jpg",
         "gallery": 1,
-        "forbiddenWords": "Casa\n/\nfinestre\n/\nMatita\n/\nEdificio",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
-    },
-    {
-        "fileName": 4,
-        "imageLink": "4.jpg",
-        "imageLinkToFolder": "4.jpg",
-        "gallery": 1,
-        "forbiddenWords": "Maschera\n/\nCapelli\n/\nVolto\n/\nSedia",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
+        "forbiddenWords": "Casa\n/\nFinestre\n/\nMatita\n/\nEdificio",
+        "locationTexts": "Radici creative\n/\nCreative Roots\n/\nKreative Wurzeln"
     },
     {
         "fileName": 12,
@@ -54,23 +38,7 @@
         "imageLinkToFolder": "12.jpg",
         "gallery": 1,
         "forbiddenWords": "Mano\n/\nProfilo\n/\nOrecchio\n/\nGiallo\n",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
-    },
-    {
-        "fileName": 13,
-        "imageLink": "13.jpg",
-        "imageLinkToFolder": "13.jpg",
-        "gallery": 1,
-        "forbiddenWords": "Ramo\n/\nAlbero\n/\nNatura\n/\nMatita",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
-    },
-    {
-        "fileName": 14,
-        "imageLink": "14.jpeg",
-        "imageLinkToFolder": "14.jpg",
-        "gallery": 1,
-        "forbiddenWords": "Frecce\n/\nCollina\n/\nColori\n/\nEnergia\n",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
+        "locationTexts": "Radici creative\n/\nCreative Roots\n/\nKreative Wurzeln"
     },
     {
         "fileName": 21,
@@ -78,7 +46,7 @@
         "imageLinkToFolder": "21.jpg",
         "gallery": 1,
         "forbiddenWords": "Paesaggio\n/\nAlberi\n/\nCasa\n/\nMontagna\n",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
+        "locationTexts": "Radici creative\n/\nCreative Roots\n/\nKreative Wurzeln"
     },
     {
         "fileName": 22,
@@ -86,7 +54,7 @@
         "imageLinkToFolder": "22.jpg",
         "gallery": 1,
         "forbiddenWords": "Tetto\n/\nAlbero\n/\nFinestra\n/\nColline",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
+        "locationTexts": "Radici creative\n/\nCreative Roots\n/\nKreative Wurzeln"
     },
     {
         "fileName": 23,
@@ -94,7 +62,7 @@
         "imageLinkToFolder": "23.jpg",
         "gallery": 1,
         "forbiddenWords": "Montagna\n/\nProfilo\n/\nCappello\n/\nPaesaggio",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
+        "locationTexts": "Radici creative\n/\nCreative Roots\n/\nKreative Wurzeln"
     },
     {
         "fileName": 27,
@@ -102,7 +70,7 @@
         "imageLinkToFolder": "27.jpg",
         "gallery": 1,
         "forbiddenWords": "Geometria\n/\nLabirinto\n/\nTessitura\n/\nRitmo\n\n",
-        "locationTexts": "Carona: Radici di un luogo creativo\n/\nCarona: Creative Roots\n/\nCarona: Kreative Wurzeln"
+        "locationTexts": "Radici creative\n/\nCreative Roots\n/\nKreative Wurzeln"
     },
     {
         "fileName": 15,
@@ -150,31 +118,31 @@
         "imageLinkToFolder": "20.jpg",
         "gallery": 3,
         "forbiddenWords": "Giallo\n/\nAnimale\n/\nFirma\n/\nRosso\n",
-        "locationTexts": "Forme di resistenza: disegno, stampa e comunità\n/\nForms of Resistance: Drawing, Print, and Community\n/\nFormen des Widerstands: Zeichnen, Drucken und Gemeinschaft"
+        "locationTexts": "Disegno, pubblicazione e vita comunitaria /\n Drawing, publishing, and communal life /\nZeichnen, publizieren und gemeinschaftliches Leben\n"
     },
     {
         "fileName": 33,
         "imageLink": "33.jpeg",
         "imageLinkToFolder": "33.jpg",
         "gallery": 3,
-        "forbiddenWords": "costruttivismo\n/\nlinee\n/\ngriglia\n/\ngeometria",
-        "locationTexts": "Forme di resistenza: disegno, stampa e comunità\n/\nForms of Resistance: Drawing, Print, and Community\n/\nFormen des Widerstands: Zeichnen, Drucken und Gemeinschaft"
+        "forbiddenWords": "Costruttivismo\n/\nLinee\n/\nGriglia\n/\nGeometria",
+        "locationTexts": "Disegno, pubblicazione e vita comunitaria /\n Drawing, publishing, and communal life /\nZeichnen, publizieren und gemeinschaftliches Leben\n"
     },
     {
         "fileName": 34,
         "imageLink": "34",
         "imageLinkToFolder": "34.jpg",
         "gallery": 3,
-        "forbiddenWords": "viso\n/\ndonna\n/\nverde\n/\nfigura",
-        "locationTexts": "Forme di resistenza: disegno, stampa e comunità\n/\nForms of Resistance: Drawing, Print, and Community\n/\nFormen des Widerstands: Zeichnen, Drucken und Gemeinschaft"
+        "forbiddenWords": "Viso\n/\nDonna\n/\nVerde\n/\nFigura",
+        "locationTexts": "Disegno, pubblicazione e vita comunitaria /\n Drawing, publishing, and communal life /\nZeichnen, publizieren und gemeinschaftliches Leben\n"
     },
     {
         "fileName": 35,
         "imageLink": "35",
         "imageLinkToFolder": "35.jpg",
         "gallery": 3,
-        "forbiddenWords": "rivista\n/\npagine\n/\nlibro\n/\nvetrina ",
-        "locationTexts": "Forme di resistenza: disegno, stampa e comunità\n/\nForms of Resistance: Drawing, Print, and Community\n/\nFormen des Widerstands: Zeichnen, Drucken und Gemeinschaft"
+        "forbiddenWords": "Rivista\n/\nPagine\n/\nLibro\n/\nVetrina ",
+        "locationTexts": "Disegno, pubblicazione e vita comunitaria /\n Drawing, publishing, and communal life /\nZeichnen, publizieren und gemeinschaftliches Leben\n"
     },
     {
         "fileName": 10,
@@ -189,7 +157,7 @@
         "imageLink": "5.tif",
         "imageLinkToFolder": "5.jpg",
         "gallery": 4,
-        "forbiddenWords": "albero\n/\ncielo\n/\nuomo\n/\nmontagna",
+        "forbiddenWords": "Albero\n/\nCielo\n/\nUomo\n/\nMontagna",
         "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
     },
     {
@@ -198,14 +166,6 @@
         "imageLinkToFolder": "6.jpg",
         "gallery": 4,
         "forbiddenWords": "Becco\n/\nLegno\n/\nTesta\n/\nUccello",
-        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
-    },
-    {
-        "fileName": 7,
-        "imageLink": "7.jpg",
-        "imageLinkToFolder": "7.jpg",
-        "gallery": 4,
-        "forbiddenWords": "Studio\n/\nPittura\n/\nCavalletto\n/\nFinestra",
         "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
     },
     {
@@ -229,7 +189,7 @@
         "imageLink": "11.jpg",
         "imageLinkToFolder": "11.jpg",
         "gallery": 4,
-        "forbiddenWords": "Nuvole\n/\nColori\n/\nSagome\n/\nSospese\n\n",
+        "forbiddenWords": "Nuvole\n/\nColori\n/\nSagome sospese\n\n",
         "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
     },
     {
@@ -253,7 +213,7 @@
         "imageLink": "24.jpg",
         "imageLinkToFolder": "24.jpg",
         "gallery": 5,
-        "forbiddenWords": "Fumetto\n/\nDonna\n/\nNavicella\n/\nParlare\n\n",
+        "forbiddenWords": "Fumetto\n/\nDonna\n/\nNavicella | Spaceship \n/\nParlare\n\n",
         "locationTexts": "Zurigo-Carona. Disegnare la distanza\n/\nZurich–Carona: Drawing the Distance\n/\nZürich–Carona. Die Distanz zeichnen"
     },
     {
@@ -269,7 +229,7 @@
         "imageLink": "26.tif",
         "imageLinkToFolder": "26.jpg",
         "gallery": 5,
-        "forbiddenWords": "Figura\n/\nOmbra\n/\nInterno\n/\nSilenzio\n\n",
+        "forbiddenWords": "Figura\n/\nOmbra\n/\nEdificio\n/\nSilenzio\n\n",
         "locationTexts": "Zurigo-Carona. Disegnare la distanza\n/\nZurich–Carona: Drawing the Distance\n/\nZürich–Carona. Die Distanz zeichnen"
     },
     {

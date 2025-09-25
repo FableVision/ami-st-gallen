@@ -306,7 +306,7 @@ ul{
 .arrived-button-popup{
   position: absolute;
   z-index: 6;
-  bottom: min(15rem, 10vh);
+  bottom: min(10rem, 5vh);
 }
 
 .darkener{
@@ -331,6 +331,10 @@ ul{
   transition-property: transform;
   transition-duration: .25s;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon-parent{
@@ -428,4 +432,16 @@ ul{
 
 .x-icon{
   height: 100%;
+}
+
+.title-image-container{
+  position: fixed;
+  left: 1rem;
+  right: 0;
+  bottom: 1rem;
+  width: auto;
+}
+
+.title-image-container > img{
+  height: 10vh;
 }
