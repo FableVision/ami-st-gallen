@@ -33,14 +33,6 @@
         "locationTexts": "Radici creative\n/\nCreative Roots\n/\nKreative Wurzeln"
     },
     {
-        "fileName": 12,
-        "imageLink": "12.jpg",
-        "imageLinkToFolder": "12.jpg",
-        "gallery": 1,
-        "forbiddenWords": "Mano\n/\nProfilo\n/\nOrecchio\n/\nGiallo\n",
-        "locationTexts": "Radici creative\n/\nCreative Roots\n/\nKreative Wurzeln"
-    },
-    {
         "fileName": 21,
         "imageLink": "21.jpg",
         "imageLinkToFolder": "21.jpg",
@@ -73,6 +65,14 @@
         "locationTexts": "Radici creative\n/\nCreative Roots\n/\nKreative Wurzeln"
     },
     {
+        "fileName": 6,
+        "imageLink": "6.jpeg",
+        "imageLinkToFolder": "6.jpg",
+        "gallery": 2,
+        "forbiddenWords": "Becco\n/\nLegno\n/\nTesta\n/\nUccello",
+        "locationTexts": "David Weiss. Disegno e trasformazione\n/\nDavid Weiss: Drawing and Transformation\n/\nDavid Weiss. Zeichnung und Verwandlung"
+    },
+    {
         "fileName": 15,
         "imageLink": "15.jpg",
         "imageLinkToFolder": "15.jpg",
@@ -102,14 +102,6 @@
         "imageLinkToFolder": "30.jpg",
         "gallery": 2,
         "forbiddenWords": "Interno\n/\nCane\n/\nBalcone\n/\nLuce\n\n",
-        "locationTexts": "David Weiss. Disegno e trasformazione\n/\nDavid Weiss: Drawing and Transformation\n/\nDavid Weiss. Zeichnung und Verwandlung"
-    },
-    {
-        "fileName": 32,
-        "imageLink": "32.jpg",
-        "imageLinkToFolder": "32.jpg",
-        "gallery": 2,
-        "forbiddenWords": "Cervello\n/\nCorpo\n/\nScarpe\n/\nCittà",
         "locationTexts": "David Weiss. Disegno e trasformazione\n/\nDavid Weiss: Drawing and Transformation\n/\nDavid Weiss. Zeichnung und Verwandlung"
     },
     {
@@ -145,6 +137,22 @@
         "locationTexts": "Disegno, pubblicazione e vita comunitaria /\n Drawing, publishing, and communal life /\nZeichnen, publizieren und gemeinschaftliches Leben\n"
     },
     {
+        "fileName": 12,
+        "imageLink": "12.jpg",
+        "imageLinkToFolder": "12.jpg",
+        "gallery": 4,
+        "forbiddenWords": "Mano\n/\nProfilo\n/\nOrecchio\n/\nGiallo\n",
+        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
+    },
+    {
+        "fileName": 32,
+        "imageLink": "32.jpg",
+        "imageLinkToFolder": "32.jpg",
+        "gallery": 4,
+        "forbiddenWords": "Cervello\n/\nCorpo\n/\nScarpe\n/\nCittà",
+        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
+    },
+    {
         "fileName": 10,
         "imageLink": "10.jpg",
         "imageLinkToFolder": "10.jpg",
@@ -158,14 +166,6 @@
         "imageLinkToFolder": "5.jpg",
         "gallery": 4,
         "forbiddenWords": "Albero\n/\nCielo\n/\nUomo\n/\nMontagna",
-        "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
-    },
-    {
-        "fileName": 6,
-        "imageLink": "6.jpeg",
-        "imageLinkToFolder": "6.jpg",
-        "gallery": 4,
-        "forbiddenWords": "Becco\n/\nLegno\n/\nTesta\n/\nUccello",
         "locationTexts": "Il Sogno di Casa Aprile\n/\nThe Dream of Casa Aprile\n/\nDer Traum von Casa Aprile"
     },
     {
